@@ -3,39 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>My Weather App</title>
   </head>
   <body>
-    <header>
-      <form>
-        <input type="search" placeholder="Enter a city..." required />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1>Paris</h1>
-        <p>
-          Sunday 9:32, clear sky
-          <br />
-          Humidity: 83%, Wind: 5.14km/h
-        </p>
-      </div>
-      <div>☀️23°C</div>
-    </main>
-    <footer>
-      Coded by
-      <a href="https://github.com/janicescott33" target="_blank">Janice Scott</a
-      >, code on
-      <a
-        href="https://github.com/janicescott33/my-shecodes-weather-app"
-        target="_blank"
-        >GitHub</a
-      >
-      and hosted by
-      <a href="https://janice-shecodes-weatherapp.netlify.app/" target="_blank"
-        >Netlify</a
-      >
-    </footer>
+    <div class="weather-app-container">
+      <header>
+        <form class="search-city-form">
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            class="search-city-input"
+          />
+          <input type="submit" value="Search" class="search-city-button" />
+        </form>
+      </header>
+      <main>
+        <div class="weather-details-container">
+          <div>
+            <h1>Paris</h1>
+            <p class="weather-details">
+              Sunday 9:32, clear sky
+              <br />
+              Humidity: <span class="humidity"><strong>83%</strong> </span> ,
+              Wind: <span class="wind"><strong>5.14km/h</strong></span>
+            </p>
+          </div>
+          <div class="weather-temperature-container">
+            <span class="weather-icon">☀️</span>
+            <span class="weather-temperature">23</span>
+            <span class="weather-unit">°C</span>
+          </div>
+        </div>
+      </main>
+      <footer>
+        Coded by
+        <a href="https://github.com/janicescott33" target="_blank"
+          >Janice Scott</a
+        >, code on
+        <a
+          href="https://github.com/janicescott33/my-shecodes-weather-app"
+          target="_blank"
+          >GitHub</a
+        >
+        and hosted by
+        <a
+          href="https://janice-shecodes-weatherapp.netlify.app/"
+          target="_blank"
+          >Netlify</a
+        >
+      </footer>
+    </div>
   </body>
 </html>
