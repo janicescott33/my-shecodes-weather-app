@@ -34,16 +34,18 @@
       <main>
         <div class="weather-details-container">
           <div>
-            <h1 id="weather-city">Paris</h1>
+            <h1 id="weather-city"></h1>
             <p class="weather-details">
-              Sunday 9:32, clear sky
+              <span id="day-time"></span><span id="weather-condition"></span>
               <br />
-              Humidity: <span class="humidity"><strong>83%</strong> </span> ,
-              Wind: <span class="wind"><strong>5.14km/h</strong></span>
+              Humidity:
+              <span class="humidity" id="weather-humidity"></span>
+              , Wind:
+              <span class="wind" id="weather-wind"></span>
             </p>
           </div>
           <div class="weather-temperature-container">
-            <span class="weather-icon" id="weather-icon">☀️</span>
+            <span class="weather-icon" id="weather-icon"> </span>
             <span class="weather-temperature" id="weather-temperature">23</span>
             <span class="weather-unit" id="weather-unit">°C</span>
           </div>

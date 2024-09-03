@@ -1,22 +1,65 @@
 function changeWeatherInfo(response) {
   let cityElement = document.querySelector("#weather-city");
+  let dayTimeElement = document.querySelector("#day-time");
+  let dayTime = new Date(response.data.time * 1000);
+  let conditionElement = document.querySelector("#weather-condition");
+  let condition = response.data.condition.description;
+  let humidityElement = document.querySelector("#weather-humidity");
+  let humidity = `${response.data.temperature.humidity}%`;
+  let windElement = document.querySelector("#weather-wind");
+  let wind = `${response.data.wind.speed}km/h`;
   let temperatureElement = document.querySelector("#weather-temperature");
-  let temperature = response.data.temperature.current;
+  let temperature = Math.round(response.data.temperature.current);
+  let iconElement = document.querySelector("#weather-icon");
+  let icon = `<img src="${response.data.condition.icon_url}"/>`;
+
   cityElement.innerHTML = response.data.city;
-  temperatureElement.innerHTML = Math.round(temperature);
+  conditionElement.innerHTML = condition;
+  humidityElement.innerHTML = humidity;
+  windElement.innerHTML = wind;
+  dayTimeElement.innerHTML = formatDayTime(dayTime);
+  temperatureElement.innerHTML = temperature;
+  iconElement.innerHTML = icon;
 }
 
-function findCity(city) {
+function formatDayTime(dayTime) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday,",
+    "Saturday",
+  ];
+  let day = days[dayTime.getDay()];
+  let hours = dayTime.getHours();
+  let minutes = dayTime.getMinutes();
+
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${day} ${hours}:${minutes}, `;
+}
+
+function changeCity(city) {
   let apiKey = "b086a5a9f70a4d4df35ot83444fbbf55";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&unit=metric`;
   axios.get(apiUrl).then(changeWeatherInfo);
 }
 
-function handleSubmit(event) {
+function handleSearch(event) {
   event.preventDefault();
-  let searchInput = document.querySelector("#search-city-input");
-  findCity(searchInput.value);
+  let inputElement = document.querySelector("#search-city-input");
+  changeCity(inputElement.value);
 }
 
 let formElement = document.querySelector("#search-city-form");
-formElement.addEventListener("submit", handleSubmit);
+formElement.addEventListener("submit", handleSearch);
+
+changeCity("London");

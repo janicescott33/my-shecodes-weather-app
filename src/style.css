@@ -61,10 +61,12 @@ a {
 
 .humidity {
   color: blue;
+  font-weight: bold;
 }
 
 .wind {
   color: blue;
+  font-weight: bold;
 }
 
 .weather-temperature-container {
@@ -72,8 +74,10 @@ a {
 }
 
 .weather-icon {
-  font-size: 50px;
-  margin-top: 35px;
+  height: 70px;
+  width: 70px;
+  margin-top: 20px;
+  margin-right: 10px;
 }
 
 .weather-temperature {
