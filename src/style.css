@@ -67,9 +67,10 @@ a {
   font-weight: bold;
 }
 
-.weather-forecast {
+.weather-temperature-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-bottom: 20px;
 }
 
 .weather-icon {
@@ -89,7 +90,7 @@ a {
 
 .weather-unit {
   font-size: 28px;
-  margin-top: 34px;
+  margin-top: 32px;
 }
 
 .weather-forecast {
