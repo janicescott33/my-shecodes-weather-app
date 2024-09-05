@@ -20,6 +20,8 @@ function changeWeatherInfo(response) {
   dayTimeElement.innerHTML = formatDayTime(dayTime);
   temperatureElement.innerHTML = temperature;
   iconElement.innerHTML = icon;
+
+  getForecast(response.data.city);
 }
 
 function formatDayTime(dayTime) {
@@ -53,13 +55,15 @@ function changeCity(city) {
   axios.get(apiUrl).then(changeWeatherInfo);
 }
 
-function handleSearch(event) {
-  event.preventDefault();
-  let inputElement = document.querySelector("#search-city-input");
-  changeCity(inputElement.value);
+function getForecast(city) {
+  let apiKey = "b086a5a9f70a4d4df35ot83444fbbf55";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
+
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = " ";
 
@@ -68,7 +72,7 @@ function displayForecast() {
       forecastHtml +
       `
     <div class="weather-forecast-daily">
-    <div class="weather-forecast-day">Wed</div>
+    <div class="weather-forecast-day">${day}</div>
     <div class="weather-forecast-icon">🌥</div>
     <div class="weather-forecast-temperatures">
     <div class="weather-forecast-temperature">
@@ -83,8 +87,13 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHtml;
 }
 
+function handleSearch(event) {
+  event.preventDefault();
+  let inputElement = document.querySelector("#search-city-input");
+  changeCity(inputElement.value);
+}
+
 let formElement = document.querySelector("#search-city-form");
 formElement.addEventListener("submit", handleSearch);
 
 changeCity("London");
-displayForecast();
