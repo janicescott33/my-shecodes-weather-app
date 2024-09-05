@@ -94,41 +94,23 @@ a {
 
 .weather-forecast {
   display: flex;
-<<<<<<< HEAD
   justify-content: space-around;
-=======
->>>>>>> b3b2e1fc8c4bef7662a7c3a199f49b8d2e04227e
 }
 
 .weather-forecast-day {
   text-align: center;
   color: rgba(8, 8, 18, 0.4);
-<<<<<<< HEAD
-=======
-  font-size: 16px;
-  line-height: 20px;
->>>>>>> b3b2e1fc8c4bef7662a7c3a199f49b8d2e04227e
 }
 
 .weather-forecast-icon {
   text-align: center;
-<<<<<<< HEAD
   font-size: 35px;
-=======
-  font-size: 36px;
->>>>>>> b3b2e1fc8c4bef7662a7c3a199f49b8d2e04227e
 }
 
 .weather-forecast-temperatures {
   display: flex;
-<<<<<<< HEAD
   justify-content: center;
   color: #ff8364;
-=======
-  text-align: center;
-  color: blue;
-  justify-content: center;
->>>>>>> b3b2e1fc8c4bef7662a7c3a199f49b8d2e04227e
   margin-top: 10px;
   margin-bottom: 30px;
 }
