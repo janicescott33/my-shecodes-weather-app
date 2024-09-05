@@ -9,7 +9,7 @@ h1 {
 }
 
 a {
-  color: #63a3ff;
+  color: #62a2ff;
 }
 
 .weather-app-container {
@@ -48,8 +48,6 @@ a {
 .weather-details-container {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid;
-  border-color: #79c1ff;
   padding-bottom: 20px;
 }
 
@@ -60,17 +58,18 @@ a {
 }
 
 .humidity {
-  color: blue;
+  color: #ff8364;
   font-weight: bold;
 }
 
 .wind {
-  color: blue;
+  color: #ff8364;
   font-weight: bold;
 }
 
-.weather-temperature-container {
+.weather-forecast {
   display: flex;
+  justify-content: space-around;
 }
 
 .weather-icon {
@@ -93,8 +92,55 @@ a {
   margin-top: 34px;
 }
 
+.weather-forecast {
+  display: flex;
+<<<<<<< HEAD
+  justify-content: space-around;
+=======
+>>>>>>> b3b2e1fc8c4bef7662a7c3a199f49b8d2e04227e
+}
+
+.weather-forecast-day {
+  text-align: center;
+  color: rgba(8, 8, 18, 0.4);
+<<<<<<< HEAD
+=======
+  font-size: 16px;
+  line-height: 20px;
+>>>>>>> b3b2e1fc8c4bef7662a7c3a199f49b8d2e04227e
+}
+
+.weather-forecast-icon {
+  text-align: center;
+<<<<<<< HEAD
+  font-size: 35px;
+=======
+  font-size: 36px;
+>>>>>>> b3b2e1fc8c4bef7662a7c3a199f49b8d2e04227e
+}
+
+.weather-forecast-temperatures {
+  display: flex;
+<<<<<<< HEAD
+  justify-content: center;
+  color: #ff8364;
+=======
+  text-align: center;
+  color: blue;
+  justify-content: center;
+>>>>>>> b3b2e1fc8c4bef7662a7c3a199f49b8d2e04227e
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.weather-forecast-temperature {
+  padding: 0 5px;
+}
+
 footer {
   text-align: center;
   font-size: 14px;
   padding-top: 30px;
+  border-top: 1px solid;
+  border-color: #79c1ff;
 }
